@@ -1,0 +1,7 @@
+<div class="grid-container" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
+  <div class="grid-cell" *ngFor="let cell of gridCells; let i = index" cdkDropList>
+    <ng-container *ngIf="cell.icon">
+      <img [src]="cell.icon" alt="Dropped Icon">
+    </ng-container>
+  </div>
+</div>

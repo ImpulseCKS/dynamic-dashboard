@@ -1,0 +1,27 @@
+/* main-page.component.css */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 column grid */
+    grid-gap: 10px;
+    /* Gap between grid cells */
+}
+
+.grid-cell {
+    min-height: 100px;
+    min-width: 100px;
+    /* Minimum height of each grid cell */
+    border: 1px solid #ccc;
+    /* Border around each grid cell */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-cell img {
+    max-width: 80%;
+    /* Maximum width for dropped icons */
+    max-height: 80%;
+    /* Maximum height for dropped icons */
+}
