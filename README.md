@@ -1,6 +1,6 @@
 # DynamicDashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
 
 Baisc idea is enables users to easily build custom dashboards with interactive features like maps, tables, and plots. By simply drag and drop the elements user need.
 
