@@ -1,7 +1,16 @@
-<div class="grid-container" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
-  <div class="grid-cell" *ngFor="let cell of gridCells; let i = index" cdkDropList>
-    <ng-container *ngIf="cell.icon">
-      <img [src]="cell.icon" alt="Dropped Icon">
-    </ng-container>
-  </div>
+<div class="container-fluid">
+    <div class="row full-height">
+        <div class="col full-height">
+            <div class="grid-container" (dragover)="onDragOver($event)">
+                <div class="grid-cell" *ngFor="let cell of gridCells; let i = index" (drop)="onDrop($event, i)">
+                    <ng-container *ngIf="cell.itemName">
+                        <mat-icon>{{ cell.itemName }}</mat-icon>
+                    </ng-container>
+                    <ng-container *ngIf="!cell.itemName">
+                        <span>Drop Here</span>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,16 +1,10 @@
 <div class="sidebar">
-    <ul>
-        <li draggable="true" (dragstart)="onDragStart($event, 'Home')">
-            <mat-icon>home</mat-icon>
-      Data for Home
-    </li>
-        <li draggable="true" (dragstart)="onDragStart($event, 'Favorite')">
-            <mat-icon>favorite</mat-icon>
-      Data for Favorite
-    </li>
-        <li draggable="true" (dragstart)="onDragStart($event, 'settings')">
-            <mat-icon>settings</mat-icon>
-      Data for Settings
-    </li>
-    </ul>
+  <ul class="list-group">
+    <li class="list-group-item" draggable="true" (dragstart)="onDragStart($event, 'home')">
+      <mat-icon>home</mat-icon>Home</li>
+    <li class="list-group-item" draggable="true" (dragstart)="onDragStart($event, 'favorites')">
+      <mat-icon>favorites</mat-icon>Favorites</li>
+    <li class="list-group-item" draggable="true" (dragstart)="onDragStart($event, 'settings')">
+      <mat-icon>settings</mat-icon>Settings</li>
+  </ul>
 </div>

@@ -21,10 +21,11 @@ export class MainPageComponent implements OnInit {
     this.gridCells = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
   }
 
-  onDrop(event: DragEvent) {
+  onDrop(event: DragEvent, cellIndex: number) {
     event.preventDefault();
     const item = event.dataTransfer?.getData('text/plain');
     this.dragDropService.dropItem(item ? item : '');
+    this.gridCells[cellIndex].itemName = item;
   }
 
   onDragOver(event: DragEvent) {
