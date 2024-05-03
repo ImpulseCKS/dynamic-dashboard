@@ -7,7 +7,13 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -20,9 +26,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     DragDropModule,
     MatIconModule,
-    NgbModule
+    NgbModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatButtonModule,
+    FlexLayoutModule
   ],
-  providers: [],
+  providers: [
+    provideAnimations()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

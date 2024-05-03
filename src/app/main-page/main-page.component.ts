@@ -2,6 +2,7 @@ import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { GridCell } from '../models/grid-cell';
 import { DragdropService } from '../services/dragdrop.service';
+// import platform from 'platform';
 
 @Component({
   selector: 'app-main-page',
@@ -18,7 +19,8 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit(): void {
     // Initialize gridCells here
-    this.gridCells = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
+    // console.log(platform.isMobile)
+    this.gridCells = [{}, {}, {}, {}, {}];
   }
 
   onDrop(event: DragEvent, cellIndex: number) {
