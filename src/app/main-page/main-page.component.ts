@@ -2,6 +2,7 @@ import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { GridCell } from '../models/grid-cell';
 import { DragdropService } from '../services/dragdrop.service';
+import * as MobileDetect from 'mobile-detect';
 
 @Component({
   selector: 'app-main-page',
@@ -11,14 +12,17 @@ import { DragdropService } from '../services/dragdrop.service';
 })
 export class MainPageComponent implements OnInit {
   gridCells: any[] = [];
+  mobileDetector = new MobileDetect(navigator.userAgent);
 
   constructor(private dragDropService: DragdropService) {
 
   }
 
   ngOnInit(): void {
-    // Initialize gridCells here
-    this.gridCells = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
+    if (!this.mobileDetector.mobile())
+      this.gridCells = [{}, {}, {}, {}, {}, {}];
+    else
+      this.gridCells = [{}, {}];
   }
 
   onDrop(event: DragEvent, cellIndex: number) {

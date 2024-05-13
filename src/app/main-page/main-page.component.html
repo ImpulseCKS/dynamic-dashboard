@@ -1,16 +1,21 @@
-<div class="container-fluid">
-    <div class="row full-height">
-        <div class="col full-height">
-            <div class="grid-container" (dragover)="onDragOver($event)">
-                <div class="grid-cell" *ngFor="let cell of gridCells; let i = index" (drop)="onDrop($event, i)">
-                    <ng-container *ngIf="cell.itemName">
-                        <mat-icon>{{ cell.itemName }}</mat-icon>
-                    </ng-container>
-                    <ng-container *ngIf="!cell.itemName">
-                        <span>Drop Here</span>
-                    </ng-container>
-                </div>
-            </div>
+<div class="grid-container">
+    <div 
+    fxLayout="row wrap" 
+    fxLayout.xs="column" 
+    (dragover)="onDragOver($event)" 
+    class="grid-items">
+        <div 
+        fxFlex="calc(33.33% - 20px)" 
+        fxFlex.xs="100%" 
+        *ngFor="let cell of gridCells; let i = index" 
+        class="grid-item" 
+        (drop)="onDrop($event, i)">
+            <ng-container *ngIf="cell.itemName">
+                <mat-icon>{{ cell.itemName }}</mat-icon>
+            </ng-container>
+            <ng-container *ngIf="!cell.itemName">
+                <span>Drop Here</span>
+            </ng-container>
         </div>
     </div>
 </div>
