@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { DragdropService } from 'src/app/services/dragdrop.service'
+import { GridConfig } from '../models/grid-config';
 
 @Component({
   selector: 'app-sidebar',
@@ -28,6 +29,18 @@ export class SidebarComponent implements OnInit {
   }
 
   onSubmit() {
-    console.warn(this.gridForm.value);
+    let gridConfig: GridConfig = this.gridForm.value;
+    this.validateGridData(this.gridForm.value);
+  }
+
+  validateGridData(gridConfig: GridConfig): boolean {
+    if (gridConfig.rows > 2)
+      return false;
+    else if (gridConfig.columns > 3)
+      return false;
+    else if (gridConfig.cellsPerRow > 3)
+      return false;
+    else
+      return true;
   }
 }
